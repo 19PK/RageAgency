@@ -35,11 +35,6 @@ def search(request):
 		city = request.GET['city']
 		if city:
 			queryset_list = queryset_list.filter(city__iexact=city)
-	# state
-	if 'state' in request.GET:
-		state = request.GET['state']
-		if state:
-			queryset_list = queryset_list.filter(state__iexact=state)
 	# bedroom
 	if 'bedrooms' in request.GET:
 		bedrooms = request.GET['bedrooms']
