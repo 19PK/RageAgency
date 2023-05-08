@@ -11,27 +11,23 @@
       <div class="home-search p-5">
         <div class="overlay p-5">
           <h1 class="display-4 mb-4">
-            Rage Agency
+            Доступные аренды Rage Agency
           </h1>
-          <p class="lead">Я КРУТОЙ!</p>
+          <p class="lead">Введите ваши критерии</p>
           <div class="search">
             <form action="{%url 'search'%}">
               <!-- Form Row 1 -->
               <div class="form-row">
                 <div class="col-md-4 mb-3">
-                  <label class="sr-only">Keywords</label>
-                  <input type="text" name="keywords" class="form-control" placeholder="Keyword (Pool, Garage, etc)">
+                  <label class="sr-only">Ключевые слова</label>
+                  <input type="text" name="keywords" class="form-control" placeholder="(Дом, квартира)">
                 </div>
 
+              
                 <div class="col-md-4 mb-3">
-                  <label class="sr-only">City</label>
-                  <input type="text" name="city" class="form-control" placeholder="City">
-                </div>
-
-                <div class="col-md-4 mb-3">
-                  <label class="sr-only">State</label>
+                  <label class="sr-only">Город</label>
                   <select name="state" class="form-control">
-                    <option selected="true" disabled="disabled">State (All)</option>
+                    <option selected="true" disabled="disabled">Все города</option>
                     {%for key,value in state_choices.items%}
                       <option value='{{key}}'>{{value}}</option>
                     {%endfor%}
@@ -41,9 +37,9 @@
               <!-- Form Row 2 -->
               <div class="form-row">
                 <div class="col-md-6 mb-3">
-                  <label class="sr-only">Bedrooms</label>
+                  <label class="sr-only">Спальни</label>
                   <select name="bedrooms" class="form-control">
-                    <option selected="true" disabled="disabled">Bedrooms (All)</option>
+                    <option selected="true" disabled="disabled">Все спальни</option>
                     {%for key,value in bedroom_choices.items%}
                       <option value='{{key}}'>{{value}}</option>
                     {%endfor%}
@@ -51,14 +47,14 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <select name="price" class="form-control" id="type">
-                    <option selected="true" disabled="disabled">Max Price (Any)</option>
+                    <option selected="true" disabled="disabled">Максимальная цена</option>
                    {%for key,value in price_choices.items%}
                       <option value='{{key}}'>{{value}}</option>
                     {%endfor%}
                   </select>
                 </div>
               </div>
-              <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button>
+              <button class="btn btn-secondary btn-block mt-4" type="submit">Подтвердить</button>
             </form>
           </div>
         </div>
@@ -71,7 +67,7 @@
   <!-- Listings -->
   <section id="listings" class="py-5">
     <div class="container">
-      <h3 class="text-center mb-3">Latest Listings</h3>
+      <h3 class="text-center mb-3">Последние добавления</h3>
       <div class="row">
         <!-- Listing 1 -->
         {% if listings %}
@@ -94,15 +90,15 @@
                   <hr>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}</div>
+                      <i class="fas fa-th-large"></i> Площадь: {{ listing.sqft }}</div>
                     <div class="col-6">
-                      <i class="fas fa-car"></i> Garage: {{ listing.garage }}</div>
+                      <i class="fas fa-car"></i> Гараж: {{ listing.garage }}</div>
                   </div>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
+                      <i class="fas fa-bed"></i> Спальни: {{ listing.bedrooms }}</div>
                     <div class="col-6">
-                      <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathroom }}</div>
+                      <i class="fas fa-bath"></i> Ванные: {{ listing.bathroom }}</div>
                   </div>
                   <hr>
                   <div class="row py-2 text-secondary">
@@ -114,7 +110,7 @@
                       <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
                   </div>
                   <hr>
-                  <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info</a>
+                  <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">Больше</a>
                 </div>
               </div>
             </div>
@@ -122,39 +118,13 @@
 
         {% else %}
           <div class="col-md-12">
-            <h3>No Listings Available</h3>
+            <h3>Нет доступных аренд</h3>
           </div>
         {% endif %}
       </div>
     </div>
   </section>
 
-  <section id="services" class="py-5 bg-secondary text-white">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <i class="fas fa-comment fa-4x mr-4"></i>
-          <hr>
-          <h3>Consulting Services</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
-        </div>
-        <div class="col-md-4">
-          <i class="fas fa-home fa-4x mr-4"></i>
-          <hr>
-          <h3>Propery Management</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
-        </div>
-        <div class="col-md-4">
-          <i class="fas fa-suitcase fa-4x mr-4"></i>
-          <hr>
-          <h3>Renting & Selling</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
 {%endblock%}

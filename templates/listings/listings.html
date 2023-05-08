@@ -8,8 +8,8 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1 class="display-4">Browse Our Properties</h1>
-          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
+          <h1 class="display-4">Наши доступные аренды</h1>
+          <p class="lead">Выбирайте что вам понравилось! Оставляйте заявку!</p>
         </div>
       </div>
     </div>
@@ -22,9 +22,9 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="{% url 'index'%}">
-              <i class="fas fa-home"></i> Home</a>
+              <i class="fas fa-home"></i>Домашняя страница</a>
           </li>
-          <li class="breadcrumb-item active"> Browse Listings</li>
+          <li class="breadcrumb-item active">Поиск аренд</li>
         </ol>
       </nav>
     </div>
@@ -54,15 +54,15 @@
                   <hr>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}</div>
+                      <i class="fas fa-th-large"></i> Площадь:{{ listing.sqft }}</div>
                     <div class="col-6">
-                      <i class="fas fa-car"></i> Garage: {{ listing.garage }}</div>
+                      <i class="fas fa-car"></i> Гаражи: {{ listing.garage }}</div>
                   </div>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
+                      <i class="fas fa-bed"></i> Спальни: {{ listing.bedrooms }}</div>
                     <div class="col-6">
-                      <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathroom }}</div>
+                      <i class="fas fa-bath"></i> Ванные: {{ listing.bathroom }}</div>
                   </div>
                   <hr>
                   <div class="row py-2 text-secondary">
@@ -74,7 +74,7 @@
                       <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
                   </div>
                   <hr>
-                  <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info</a>
+                  <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">Больше информации</a>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@
           {% endfor %}
         {% else %}
           <div class="col-md-12">
-            <h4>No Listing Available</h4>
+            <h4>Нет доступных аренд</h4>
           </div>
         {% endif %}
   

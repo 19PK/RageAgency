@@ -12,18 +12,14 @@
             <!-- Form Row 1 -->
             <div class="form-row">
               <div class="col-md-4 mb-3">
-                <label class="sr-only">Keywords</label>
-                <input type="text" name="keywords" class="form-control" placeholder="Keyword (Pool, Garage, etc)" value="{{values.keywords}}">
+                <label class="sr-only">Ключевые слова</label>
+                <input type="text" name="keywords" class="form-control" placeholder="Ключевые слова" value="{{values.keywords}}">
               </div>
 
-              <div class="col-md-4 mb-3">
-                <label class="sr-only">City</label>
-                <input type="text" name="city" class="form-control" placeholder="City" value="{{values.city}}">
-              </div>
 
               <div class="col-md-4 mb-3">
-                <label class="sr-only">State</label>
-                <select name="state" class="form-control">
+                <label class="sr-only">Город</label>
+                <select name="city" class="form-control">
                    {% for key,value in state_choices.items %}
                       <option value="{{ key }}" 
                       {% if key == values.state %}
@@ -37,9 +33,9 @@
             <!-- Form Row 2 -->
             <div class="form-row">
               <div class="col-md-6 mb-3">
-                <label class="sr-only">Bedrooms</label>
+                <label class="sr-only">Спальни</label>
                 <select name="bedrooms" class="form-control">
-                  <option selected="true" disabled="disabled">Bedrooms (Any)</option>
+                  <option selected="true" disabled="disabled">Все спальни</option>
                   {%for key,value in bedroom_choices.items%}
                       <option value='{{key}}'
                       {% if key == values.bedrooms %}
@@ -51,7 +47,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <select name="price" class="form-control">
-                  <option selected="true" disabled="disabled">Max Price (All)</option>
+                  <option selected="true" disabled="disabled">Максимальная цена</option>
                   {%for key,value in price_choices.items%}
                       <option value='{{key}}'
                       {% if key == values.price %}
@@ -62,7 +58,7 @@
                 </select>
               </div>
             </div>
-            <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button>
+            <button class="btn btn-secondary btn-block mt-4" type="submit">Подтвердить</button>
           </form>
         </div>
       </div>
@@ -76,12 +72,12 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="{%url 'index'%}">
-              <i class="fas fa-home"></i> Home</a>
+              <i class="fas fa-home"></i>Домашняя страница</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{%url 'listings'%}">Browse Listings</a>
+            <a href="{%url 'listings'%}">Аренды</a>
           </li>
-          <li class="breadcrumb-item active"> Search Results</li>
+          <li class="breadcrumb-item active">Результаты поиска</li>
         </ol>
       </nav>
     </div>
@@ -111,15 +107,15 @@
                   <hr>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}</div>
+                      <i class="fas fa-th-large"></i> Площадь: {{ listing.sqft }}</div>
                     <div class="col-6">
-                      <i class="fas fa-car"></i> Garage: {{ listing.garage }}</div>
+                      <i class="fas fa-car"></i> Гаражи: {{ listing.garage }}</div>
                   </div>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
+                      <i class="fas fa-bed"></i> Спальни: {{ listing.bedrooms }}</div>
                     <div class="col-6">
-                      <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathroom }}</div>
+                      <i class="fas fa-bath"></i> Ванные: {{ listing.bathroom }}</div>
                   </div>
                   <hr>
                   <div class="row py-2 text-secondary">
@@ -131,7 +127,7 @@
                       <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
                   </div>
                   <hr>
-                  <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info</a>
+                  <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">Больше информации</a>
                 </div>
               </div>
             </div>
@@ -139,7 +135,7 @@
           {% endfor %}
         {% else %}
           <div class="col-md-12">
-            <h4>No Listing Available</h4>
+            <h4>Нет доступных аренд</h4>
           </div>
         {% endif %}
 

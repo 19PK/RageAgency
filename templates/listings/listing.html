@@ -20,10 +20,10 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{%url 'index'%}">Home</a>
+            <a href="{%url 'index'%}">Домашняя страница</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{%url 'listings'%}">Listings</a>
+            <a href="{%url 'listings'%}">Аренды</a>
           </li>
           <li class="breadcrumb-item active">{{listing.title}}</li>
         </ol>
@@ -34,7 +34,7 @@
   <!-- Listing -->
   <section id="listing" class="py-4">
     <div class="container">
-      <a href="{%url 'listings'%}" class="btn btn-light mb-4">Back To Listings</a>
+      <a href="{%url 'listings'%}" class="btn btn-light mb-4">Вернуться</a>
       <div class="row">
         <div class="col-md-9">
           <!-- Home Main Image -->
@@ -89,19 +89,19 @@
             <div class="col-md-6">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-secondary">
-                  <i class="fas fa-money-bill-alt"></i> Asking Price:
+                  <i class="fas fa-money-bill-alt"></i> Цена:
                   <span class="float-right">$ {{listing.price | intcomma}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                  <i class="fas fa-bed"></i> Bedrooms:
+                  <i class="fas fa-bed"></i> Спальни:
                   <span class="float-right">{{listing.bedrooms}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                  <i class="fas fa-bath"></i> Bathrooms:
+                  <i class="fas fa-bath"></i> Ванны:
                   <span class="float-right">{{listing.bathroom}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                  <i class="fas fa-car"></i> Garage:
+                  <i class="fas fa-car"></i> Гараж:
                   <span class="float-right">{{listing.garage}}
                   </span>
                 </li>
@@ -110,20 +110,15 @@
             <div class="col-md-6">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-secondary">
-                  <i class="fas fa-th-large"></i> Square Feet:
+                  <i class="fas fa-th-large"></i> Площадь:
                   <span class="float-right">{{listing.sqft}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                  <i class="fas fa-square"></i> Lot Size:
-                  <span class="float-right">{{listing.lot_size}} Acres
-                  </span>
-                </li>
-                <li class="list-group-item text-secondary">
-                  <i class="fas fa-calendar"></i> Listing Date:
+                  <i class="fas fa-calendar"></i> Дата аренды:
                   <span class="float-right">{{listing.list_date}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                  <i class="fas fa-bed"></i> Realtor:
+                  <i class="fas fa-bed"></i> Риелтор:
                   <span class="float-right">{{listing.realtor}}
                   </span>
                 </li>
@@ -144,11 +139,11 @@
           <div class="card mb-3">
             <img class="card-img-top" src="{{listing.realtor.photo.url}}" alt="">
             <div class="card-body">
-              <h5 class="card-title">Property Realtor</h5>
+              <h5 class="card-title">Риелтор:</h5>
               <h6 class="text-secondary">{{listing.realtor}}</h6>
             </div>
           </div>
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An Inquiry</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Отсавить заявку</button>
         </div>
       </div>
     </div>
