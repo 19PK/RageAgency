@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dip',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': 5432
+        'NAME': os.environ.get("POSTGRES_DB", "aviatickets"),
+        'USER': os.environ.get("POSTGRES_USER", "admin"),
+        'PASSWORD': os.environ.get("POSTGRES_PASSWORD", "admin"),
+        'HOST': os.environ.get("POSTGRES_SERVER", "localhost"),
+        'PORT': 5432,
     }
 }
 
