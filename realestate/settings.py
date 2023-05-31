@@ -25,7 +25,7 @@ SECRET_KEY = '*c9k*&s%)(o%&$&*byv#rb#9mq894=!0yk0-nb#$oq0jiiq)ua'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -132,6 +132,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'realestate-master/static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
