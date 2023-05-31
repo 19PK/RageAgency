@@ -133,6 +133,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'realestate-master/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
