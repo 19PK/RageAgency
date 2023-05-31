@@ -1,5 +1,5 @@
 .btn-secondary {
-  color: #fff !important; }
+  color: #ffffff !important; }
 
 img {
   width: 100%; }
@@ -16,7 +16,7 @@ img {
   background: url(../img/showcase.jpg) no-repeat top center fixed/cover;
   position: relative;
   min-height: 650px;
-  color: #fff;
+  color: #ffffff;
   padding-top: 6rem; }
   #showcase .home-search {
     min-height: 400px;

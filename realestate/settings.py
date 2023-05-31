@@ -25,7 +25,7 @@ SECRET_KEY = '*c9k*&s%)(o%&$&*byv#rb#9mq894=!0yk0-nb#$oq0jiiq)ua'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("POSTGRES_DB", "aviatickets"),
+        'NAME': os.environ.get("POSTGRES_DB", "dip"),
         'USER': os.environ.get("POSTGRES_USER", "admin"),
         'PASSWORD': os.environ.get("POSTGRES_PASSWORD", "admin"),
         'HOST': os.environ.get("POSTGRES_SERVER", "localhost"),
